@@ -1,0 +1,28 @@
+<div class="btn">
+    <button class="btn btn-primary mt-10 mb-0 d-flex" (click)="GoProject()">Back</button>
+  </div>
+  <table  class="table table-bordered table-secondary mt-3 ml-2 mr-2 ">
+      <thead class="heading">
+        <tr>
+          
+          <th scope="col">Project_Id</th>
+          <th  scope="col">Project_Name</th>
+          <th  scope="col">Developer</th>
+          <th scope="col">Due_Date</th>
+          <th  scope="col">Technology</th>
+          <th  scope="col">Priority</th>       
+        </tr>
+      </thead>
+      <tbody class="body" >
+          <tr  >
+              <td >{{dataItem.Project_Id}}</td>
+              <td  >{{projectTeam.Full_Name}}</td>
+              <td>{{projectTeam.DOB}}</td>
+              <td >{{projectTeam.Email}}</td>
+              <td >{{projectTeam.PhoneNumber}}</td>
+              <td >{{dataItem.Lookup_Name}}</td>
+            
+          </tr>
+      </tbody>
+    </table>
+  

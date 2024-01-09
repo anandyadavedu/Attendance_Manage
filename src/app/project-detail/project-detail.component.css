@@ -1,0 +1,97 @@
+
+.container{
+    /* height: 835px; */
+    height: 150%;
+    /* background-color: rgb(131, 182, 207); */
+    /* background-color: rgb(141, 178, 208); */
+    background-color: rgb(255, 255, 255);
+    color: black;
+    display: flex;
+    flex-direction: column;
+  
+}
+.Heading{
+    background-color: rgb(58, 58, 208);
+    transform: rotate(360deg);
+
+    /* text-shadow: 1px 1px 1px red; */
+    padding: 12px;
+    margin: 3px 10px;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    /* border-bottom: 2px solid red; */
+ 
+    /* animation-name: Heading-Title;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; */
+   
+}
+.form{
+    margin-top: 18px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+.form-control{
+    margin-top: 10px 0;
+    display: flex;
+    /* flex-wrap: wrap; */
+    background-color: rgb(187 193 193);
+    border-radius: 25px;
+  
+
+}
+.row{
+    margin: 15px 5px;
+}
+.title-name{
+    font-size: 20px;
+    margin: 8px 0 8px 20px;
+    color: black;
+    text-shadow: 1px 1px 1px black;
+}
+#description{
+    
+    padding: 32px;
+    border-radius: 32px;
+    justify-content: flex-start;
+}
+#technology{
+   padding: 32px;
+}
+button{
+    margin: 2px 0 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+#button2{
+    margin-left: 10px;
+}
+#main-heading{
+    margin-top: 50px;
+}
+input:focus{
+    background-color: rgb(141, 167, 255);
+}
+select:focus{
+    background-color:  rgb(141, 167, 255);
+}
+
+@keyframes Heading-Title{
+    0%{color: black;}
+    20%{color: blue;}
+    35%{color: red;}
+    50%{color: darkgreen;}
+    65%{color: rgb(220, 20, 160);}
+    85%{color: rgb(216, 210, 44);}
+    100%{color: aqua;}
+}
+

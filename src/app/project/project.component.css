@@ -1,0 +1,55 @@
+.table{
+    margin-left: 8px;
+    margin-right: 8px;
+    background-color: rgb(237, 241, 244);
+
+}
+.button button{
+    margin: 4px 4px;
+    padding: 1px;
+    /* display: flex; */
+    /* flex-direction: column; */
+
+}
+.project-detail{
+    margin-top: 30px;
+}
+
+.body{
+ 
+    justify-content: center;
+   
+    background-color: #6e6969;
+}
+
+
+
+/* popup styling */
+
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
+}
+  
+.popup.show {
+    display: block;
+}
+
+tr > td{
+    
+      font-size: 16px;
+}
+tr > th{
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 20px;
+   font-weight: 500px;
+}

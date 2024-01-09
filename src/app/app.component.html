@@ -1,0 +1,75 @@
+<!-- <!-- <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active " aria-current="page" routerLink="/login">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLink="/home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLink="/login">Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLink="/registration">Registration</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLink="/emp-detail">Employee Detail</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLink="/project">Project Detail</a>
+    </li>
+     
+    <li class="nav-item">
+      <a class="nav-link " routerLink="/sidebar">Sidebar</a>
+    </li>
+   
+   
+  </ul>
+
+</div> -->
+
+  <nav class="navbar navbar-dark  fixed-top mb-25" style=" background-color: midnightblue">
+        <div class="container-fluid">
+          <button  class="navbar-toggler d-flex position-fixed " style="border: 2px solid #949292" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span  class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-start text-bg-black" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header ">
+              <img id="Image"  src="./assets/Image/IT_Next_Solutions_Logo.png" alt="No Image">
+              <!-- <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">It_Next_Solution</h5> -->
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="navbar-main">
+            <div class="offcanvas-body">
+              <ul class="navbar-nav d-flex justify-content-start flex-grow-1">
+                <li class="nav-item">
+                  <a class="nav-link " routerLink="/home" class="nav-list" id="home"><i class="fa-solid fa-house" style="margin-right: 4px;"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " routerLink="/login"class="nav-list" id="login" ><i class="fa-solid fa-user"></i> Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " routerLink="/registration"class="nav-list" id="registration"><i class="fa-solid fa-users"></i> Registration</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " routerLink="/emp-detail" class="nav-list" id="emp-detail" ><i class="fa-solid fa-eye-slash"></i> Employee Detail</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " routerLink="/project"class="nav-list" id="project-detail" ><i class="fa-solid fa-eye-slash"></i> Project Detail</a>
+                </li>
+                </ul>
+            </div>
+          </div>
+          </div>
+        </div>
+  </nav> 
+
+
+      
+  <router-outlet></router-outlet>
+
+   
+
+
+
+

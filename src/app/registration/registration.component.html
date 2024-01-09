@@ -1,0 +1,140 @@
+ 
+  <div class="main-content" style="background-color: rgb(255, 255, 255);">
+    <div class=" main-header " style="background-color: rgb(22, 62, 150);" >
+         <header class="card-body " >
+             <h3 class="card-title">Employee Registration Form</h3>
+         </header>
+       
+     </div>
+
+ <div class="container text-dark" [formGroup]="registrationForm" (keydown.enter)="checkRegistration()" style="background-color: rgb(255 255 255);">
+     <div class="mb-2">
+         <div class="row">
+             <div class="col-sm-6 mt-2">
+               <label for="" class="form-label">Full Name <span>*</span></label>
+               <input type="text" [(ngModel)]="fullname" formControlName="fullname" class="form-control" id="" placeholder="Full Name">
+               <div *ngIf="submitted && this.registrationForm.controls['fullname'].errors" class="text-danger">
+                <div *ngIf="this.registrationForm.controls['fullname'].errors">Full Name is required.</div>
+              </div>
+             </div>
+             <div class="col-sm-6 mt-2"> 
+               <label for="" class="form-label">Date Of Birth <span>*</span></label>
+               <input type="date" [(ngModel)]="dob" formControlName="dob" class="form-control" id="" placeholder="Date of Birth">
+               <div *ngIf="submitted && this.registrationForm.controls['dob'].errors" class="text-danger">
+                <div *ngIf="this.registrationForm.controls['dob'].errors">DOB  is required.</div>
+              </div>
+             </div>
+         </div>
+     </div>
+     <div class="row mb-2">
+         <div class="col-sm-6 mt-2">
+           <label for="" class="form-label">Email <span>*</span></label>
+           <input type="email" [(ngModel)]="email" formControlName="email" class="form-control" id="" placeholder="Email">
+           <div *ngIf="submitted && this.registrationForm.controls['email'].errors" class="text-danger">
+            <div *ngIf="this.registrationForm.controls['email'].errors">Email is required.</div>
+          </div>
+         </div>
+         <div class="col-sm-6 mt-2"> 
+           <label for="" class="form-label">Phone Number <span>*</span></label>
+           <input type="text" [(ngModel)]="phonenumber" formControlName="phonenumber" class="form-control" id="" placeholder="Phone Number">
+           <div *ngIf="submitted && this.registrationForm.controls['phonenumber'].errors" class="text-danger">
+            <div *ngIf="this.registrationForm.controls['phonenumber'].errors">Phone Number is required.</div>
+          </div>
+         </div>
+     </div>
+     <div class="row ">
+         <div class="col-sm-6 mt-2">
+           <label for="" class="form-label"> Current Address <span>*</span></label>
+           <input type="text" [(ngModel)]="address1" formControlName="address1"  class="form-control" id="" placeholder="Current Address">
+           <div *ngIf="submitted && this.registrationForm.controls['address1'].errors" class="text-danger">
+            <div *ngIf="this.registrationForm.controls['address1'].errors">Address is required.</div>
+          </div>
+         </div>
+         <div class="col-sm-6 mt-2"> 
+           <label for="" class="form-label">Permanent Address <span>*</span></label>
+           <input type="text" [(ngModel)]="address2" formControlName="address2" class="form-control" id="" placeholder="Permanent Address">
+         </div>
+     </div>
+
+     <div class="row mt-2">
+          <div class="col-md-4 mt-2">
+             <label   class="form-label" for="state" >State <span>*</span></label><br>
+             <!-- <input class="w-100" type="select" placeholder="State"> -->
+             <select [(ngModel)]="state" formControlName="state" #MyState (change)='OnselectState(MyState.value)' class="col-md-4 w-100" id="state">
+                 <option id="option" value="" disabled selected>Select State</option>
+                 <option id="option" *ngFor="let state of states" [value]="state.StateID">{{state.StateName}}</option>
+                
+              </select>
+             
+         </div>
+         <div class="col-md-4 mt-2">
+             <label   class="form-label" for="city" >City <span>*</span></label><br>
+            
+             <select [(ngModel)]="city" formControlName="city"  class="col-md-4 w-100" id="city"  >
+                 <option id="option" value="" disabled selected>Select City</option>
+                 <option id="option" *ngFor="let city of cities" [value]="city.CityID">{{city.CityName}}</option>
+               
+             </select>
+         </div>
+         <div class="col-md-4 mt-2">
+             <label class="form-label" for="pincode" > Pincode <span>*</span></label><br>
+             <input [(ngModel)]="pincode" formControlName="pincode" class="w-100" type="select"  id="pincode" placeholder="Pincode" size="6">
+            
+             
+         </div>
+     </div>
+
+     <div class="row mt-2">
+         <div class="col-sm-4 mt-2">
+           <label for="" class="form-label">Apply Position</label>
+           
+           <input  [(ngModel)]="applyingposition" formControlName="applyingposition" type="text" class="form-control" id="" placeholder="Apply Position">
+         </div>
+         <div class="col-sm-4 mt-2"> 
+           <label for="" class="form-label">Type Of Work</label>
+           <input type="text" class="form-control" id="" placeholder="Type Of Work">
+         </div>
+         <div class="col-sm-4 mt-2"> 
+             <label for="" class="form-label">Joining Date <span>*</span></label>
+             <input type="date" [(ngModel)]="joiningdate" formControlName="joiningdate" class="form-control" id="" placeholder="Joining Date">
+             <div *ngIf="submitted && this.registrationForm.controls['joiningdate'].errors" class="text-danger">
+              <div *ngIf="this.registrationForm.controls['joiningdate'].errors">Joining date is required.</div>
+            </div>
+           </div>
+     </div>
+     <div class="radio mt-4" >
+         <label for="gender" class="form-label"> Gender <span>*</span> </label>
+         <input  class="mx-4 " type="radio" [(ngModel)]="gender" value="male" formControlName="gender" >      
+         <label for="male"  class="form-label" >Male</label>          
+         <input  class ="mx-3" type="radio" [(ngModel)]="gender" formControlName="gender" value="female">
+         <label for="male" class="form-label" >Female</label>
+         <input  class ="mx-3" type="radio" [(ngModel)]="gender" formControlName="gender" value="other">
+         <label for="male" class="form-label" >Other</label>
+         <div *ngIf="submitted && this.registrationForm.controls['gender'].errors" class="text-danger">
+          <div *ngIf="this.registrationForm.controls['gender'].errors">Gender is required.</div>
+        </div>
+     </div>
+
+     <div class="row mt-3">
+         <div class="col-md-6 col-sm-6 mt-2">
+            <label for="resume" class="form-label">Upload Resume <span>*</span></label><br>
+            <input type="file" [(ngModel)]="resume" formControlName="resume" style="border-radius: 2px;"  class="form-control-file" (change)="onselectFile($event)">
+            <div *ngIf="submitted && this.registrationForm.controls['resume'].errors" class="text-danger">
+              <div *ngIf="this.registrationForm.controls['resume'].errors">Resume is required.</div>
+            </div>
+         </div>
+         <div class="col-md-6 col-sm-6 mt-2">
+             <label for="resume" class="form-label">Additional Documents </label><br>
+             <input type="file" [(ngModel)]="Additional_Documents" formControlName="Additional_Documents" style="border-radius: 2px;"  #fileInput class="form-control-file" style="border-radius: 2px;"  (change)="onSelectFiles($event)" multiple >
+         </div>
+     </div>
+
+     <div class="btn mt-5 p-2 d-flex justify-content-center">
+         <button id="submit" *ngIf="dataItem.Employee_ID==undefined" class="btn btn-danger btn-lg" (click)="checkRegistration()">Submit</button>
+         <button id="submit" *ngIf="dataItem.Employee_ID!=undefined" class="btn btn-danger btn-lg" (click)="UpdateRegistration()">Update</button>
+     </div>
+     
+     
+ </div>
+</div>
+

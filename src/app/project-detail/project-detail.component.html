@@ -1,0 +1,66 @@
+
+<div class="container" id="main-heading" >
+  <!-- <button class="navbar-toggler position-fixed p-10 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+    <h1 class="Heading "><b>Project Detail</b></h1>
+    <div class="container-fluid " [formGroup]="projectForm" (keydown.enter)="addProject()">
+      <div class="form">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="Tittle" class="title-name">Project Name</label>
+          <input type="text" [(ngModel)]="Project_Name" formControlName="Project_Name" class="form-control" placeholder="Project Name">
+          <div *ngIf="submitted && this.projectForm.controls['Project_Name'].errors " class="text-danger" >
+          <div *ngIf="this.projectForm.controls['Project_Name'].errors">Project Name is required</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="Tittle" class="title-name">Project Priority</label>
+          <select [(ngModel)]="Project_Priority" formControlName="Project_Priority" id="priority" class="form-control">
+            <option value="0" disabled selected >Select Priority</option>
+            <option *ngFor="let prior of priority" [value]="prior.Id">{{prior.Lookup_Name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="Tittle" class="title-name">Start Date</label>
+          <input type="date" [(ngModel)]="Start_Date" formControlName="Start_Date" class="form-control" placeholder="mm/dd/yyyy">
+          <div *ngIf="submitted && this.projectForm.controls['Start_Date'].errors " class="text-danger" >
+            <div *ngIf="this.projectForm.controls['Start_Date'].errors">Start Date is required</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="Tittle" class="title-name">End Date</label>
+          <input type="date" [(ngModel)]="End_Date" formControlName="End_Date" class="form-control" placeholder="mm/dd/yyyy">
+          <div *ngIf="submitted && this.projectForm.controls['End_Date'].errors " class="text-danger" >
+            <div *ngIf="this.projectForm.controls['End_Date'].errors">End Date is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="Tittle" class="title-name">Description</label>
+          <input type="text" [(ngModel)]="Description" formControlName="Description" class="form-control" id="description" placeholder="Description">
+          <div *ngIf="submitted && this.projectForm.controls['Description'].errors " class="text-danger" >
+            <div *ngIf="this.projectForm.controls['Description'].errors">Description is required</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="title-name" for="Tittle">Technology</label>
+          <input type="text" [(ngModel)]="Technology" formControlName="Technology" class="form-control" id="technology" placeholder="Technology">
+          <div *ngIf="submitted && this.projectForm.controls['Technology'].errors " class="text-danger" >
+            <div *ngIf="this.projectForm.controls['Technology'].errors">Technology is required</div>
+          </div>
+        </div>
+      </div>
+     </div>
+     
+    </div>
+    <div class="btn mt-3 p-2 d-flex justify-content-center " style="padding: 0rem!important;">
+      <button *ngIf="dataItem.Id==undefined" class="btn btn-primary btn-lg" (click)="addProject()">Add Project</button>
+      <button id="submit" *ngIf="dataItem.Id!=undefined" class="btn btn-primary btn-lg" (click)="UpdateProject()">Update Project</button>
+      <button class="btn btn-primary btn-lg " id="button2" (click)="ProjectDetail()" >Cancel</button>
+    </div>
+  </div>
+  

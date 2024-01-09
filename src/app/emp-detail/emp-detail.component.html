@@ -1,0 +1,34 @@
+
+
+<table class="table table-bordered table-secondary mt-5 ml-2 mr-2 " id="main">
+    <thead class="heading">
+      <tr>
+        
+        <th scope="col">ID</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Action</th>
+       
+      </tr>
+    </thead>
+    <tbody class="body" >
+        <tr *ngFor="let dataItem of EmployeeDetailList">
+            <td>{{dataItem.Employee_ID}}</td>
+            <td>{{dataItem.Full_Name}}</td>
+            <td>{{dataItem.Email}}</td>
+            <td>{{dataItem.PhoneNumber}}</td>
+            <td>{{dataItem.Gender}}</td>
+            <td>
+                <div class="edit">
+                    <button class="btn btn-primary"  (click)="editEmployee(dataItem)"> Edit </button> 
+                    <button class="btn btn-primary " (click)="deleteEmployee(dataItem.Employee_ID)"> Delete </button>
+                    <button class="btn btn-primary " (click)="viewEmployee(dataItem)"> View </button>
+                </div>
+               
+            </td>
+
+        </tr>
+    </tbody>
+  </table>

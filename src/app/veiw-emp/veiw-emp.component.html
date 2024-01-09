@@ -1,0 +1,41 @@
+<div class="btn">
+  <button class="btn btn-primary mt-10 mb-0 d-flex" (click)="GoEmpDetail()"><i class="fa-solid fa-arrow-left"></i> Back</button>
+</div>
+<table  class="table table-bordered table-secondary mt-3 ml-2 mr-2 ">
+    <thead class="heading">
+      <tr>
+        
+        <th scope="col">ID</th>
+        <th  scope="col">Full Name</th>
+        <th  scope="col">DOB</th>
+        <th scope="col">Email</th>
+        <th  scope="col">Phone Number</th>
+        <th  scope="col">Address</th>
+        <th  scope="col">State</th>
+        <th  scope="col">City</th>
+        <th  scope="col"> Pincode</th>
+        <th  scope="col"> Joining Date</th>
+        <th  scope="col">Gender</th>
+        
+       
+      </tr>
+    </thead>
+    <tbody class="body" >
+        <tr  >
+            <td >{{emp.Employee_ID}}</td>
+            <td  >{{emp.Full_Name}}</td>
+            <td>{{emp.DOB}}</td>
+            <td >{{emp.Email}}</td>
+            <td >{{emp.PhoneNumber}}</td>
+            <td >{{emp.Address1}}</td>
+            <td >{{emp.State}}</td>
+            <td >{{emp.City}}</td>
+            <td >{{emp.Pincode}}</td>          
+            <td >{{emp.Joining_date}}</td>
+            <td >{{emp.Gender}}</td>
+          
+            
+
+        </tr>
+    </tbody>
+  </table>

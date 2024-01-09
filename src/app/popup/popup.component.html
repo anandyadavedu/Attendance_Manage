@@ -1,0 +1,40 @@
+<h2 id="main-title">Add Members</h2>
+<div class="container-fluid d-flex justify-content-space-between" style="margin-top: 10px;">
+  <!-- <form [formGroup]="projectTeamForm" (keydown.enter)="AddProjectTeam()"> -->
+  <form [formGroup]="projectTeamForm">
+    <div class="project">
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="" class="ProjectM">Project Manager</label>
+          <select [(ngModel)]="Manager_Id" formControlName="Manager_Id" id="manager">
+            <option value="select manager" disabled select>
+              Select Manager
+            </option>
+            <option *ngFor="let prior of manager" [value]="prior.Employee_ID">
+              {{ prior.Full_Name }}
+            </option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+          <label for="" class="ProjectM">Project Developer</label>
+          <select [(ngModel)]="Developer_Id" formControlName="Developer_Id" name="projectMember" id="developer">
+            <option value="select manager"  disabled select placeholder="select Manager">
+              Select Developer
+            </option>
+            <option *ngFor="let prior of developer" [value]="prior.Employee_ID">
+              {{ prior.Full_Name }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="btn d-flex justify-content-center" id="button">
+        <button mat-raised-button color="primary" id="add-member" (click)="AddProjectTeam(data.Id)">
+          Add Memeber
+        </button>
+        <button mat-raised-button color="primary" mat-dialog-close id="cancel">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
